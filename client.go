@@ -198,7 +198,7 @@ func (c *Client) GetStreamContext(ctx context.Context, video *Video, format *For
 }
 
 func (c *Client) download(req *http.Request, w *io.PipeWriter, format *Format) {
-	const chunkSize int64 = 10_000_000
+	const chunkSize int64 = 1_000_000
 	// Loads a chunk a returns the written bytes.
 	// Downloading in multiple chunks is much faster:
 	// https://github.com/kkdai/youtube/pull/190
